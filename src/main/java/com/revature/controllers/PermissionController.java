@@ -24,7 +24,6 @@ public class PermissionController {
 	
 	@RequestMapping(value = "/Permission", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
 	public Permission addPermission(@RequestBody Permission p) {
-		System.out.println(p);
 		return ps.addPermission(p);
 	}
 	
@@ -39,7 +38,7 @@ public class PermissionController {
 	}
 	
 	@GetMapping(value = "/Permission/search")
-	public Permission findPermission(@RequestParam(required = false) String name, @RequestParam(required = false) String type) {
+	public Permission findPermission(@RequestParam(required = false) String name) {
 		
 		if(name != null) {
 			return ps.getPermissionByName(name);
@@ -56,7 +55,6 @@ public class PermissionController {
 	
 	@DeleteMapping(value = "/Permission/{id}")
 	public boolean deletePermission(@PathVariable("id") int id) {
-		System.out.println("Executing Delete");
 		return ps.deletePermission(ps.getPermission(id));
 	}
 }
