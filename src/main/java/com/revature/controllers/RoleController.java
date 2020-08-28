@@ -24,7 +24,6 @@ public class RoleController {
 	
 	@RequestMapping(value = "/Role", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
 	public Role addRole(@RequestBody Role r) {
-		System.out.println(r);
 		return rs.addRole(r);
 	}
 	
@@ -39,7 +38,7 @@ public class RoleController {
 	}
 	
 	@GetMapping(value = "/Role/search")
-	public Role findRole(@RequestParam(required = false) String name, @RequestParam(required = false) String type) {
+	public Role findRole(@RequestParam(required = false) String name) {
 		
 		if(name != null) {
 			return rs.findByName(name);
@@ -56,7 +55,6 @@ public class RoleController {
 	
 	@DeleteMapping(value = "/Role/{id}")
 	public boolean deleteRole(@PathVariable("id") int id) {
-		System.out.println("Executing Delete");
 		return rs.deleteRole(rs.getRole(id));
 	}
 }
