@@ -7,7 +7,7 @@ import com.revature.beans.User;
 public interface UserService {
 	public User addUser(User e);
 	public User getUser(int id);
-	public User findByName(String name);
+	public User findByUsername(String username);
 	public List<User> getAllUsers();
 	public User updateUser(User change);
 	public boolean deleteUser(User e);
