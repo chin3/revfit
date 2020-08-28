@@ -5,9 +5,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "r_user")
 public class User {
 
 	@Id
@@ -15,7 +17,7 @@ public class User {
 	@Column(name = "user_id")
 	private int id;
 	
-	@OneToMany
+	@ManyToOne
 	@JoinColumn(name = "role_id")
 	private Role role;
 	
@@ -29,6 +31,8 @@ public class User {
 	private String lastName;
 	
 	private String email;
+	
+	@Column(columnDefinition = "NUMBER(10,3)")
 	private double weight;
 	private int height;
 	
