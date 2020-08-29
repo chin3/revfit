@@ -19,24 +19,20 @@ public class Workout {
 	@JoinColumn(name = "user_id")
 	private User user;
 	
-	@Column(name = "total_time")
-	private double totalTime;
 	private String intensity;
 	private String type;
 	
-	public Workout(int id, User user, double totalTime, String intensity, String type) {
+	public Workout(int id, User user, String intensity, String type) {
 		super();
 		this.id = id;
 		this.user = user;
-		this.totalTime = totalTime;
 		this.intensity = intensity;
 		this.type = type;
 	}
 	
-	public Workout(User user, double totalTime, String intensity, String type) {
+	public Workout(User user, String intensity, String type) {
 		super();
 		this.user = user;
-		this.totalTime = totalTime;
 		this.intensity = intensity;
 		this.type = type;
 	}
@@ -61,14 +57,6 @@ public class Workout {
 		this.user = user;
 	}
 
-	public double getTotalTime() {
-		return totalTime;
-	}
-
-	public void setTotalTime(double totalTime) {
-		this.totalTime = totalTime;
-	}
-
 	public String getIntensity() {
 		return intensity;
 	}
@@ -87,8 +75,7 @@ public class Workout {
 
 	@Override
 	public String toString() {
-		return "Workout [id=" + id + ", user=" + user + ", totalTime=" + totalTime + ", intensity=" + intensity
-				+ ", type=" + type + "]";
+		return "Workout [id=" + id + ", user=" + user + ", intensity=" + intensity + ", type=" + type + "]";
 	}
 
 	@Override
@@ -97,9 +84,6 @@ public class Workout {
 		int result = 1;
 		result = prime * result + id;
 		result = prime * result + ((intensity == null) ? 0 : intensity.hashCode());
-		long temp;
-		temp = Double.doubleToLongBits(totalTime);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
 		result = prime * result + ((type == null) ? 0 : type.hashCode());
 		result = prime * result + ((user == null) ? 0 : user.hashCode());
 		return result;
@@ -120,8 +104,6 @@ public class Workout {
 			if (other.intensity != null)
 				return false;
 		} else if (!intensity.equals(other.intensity))
-			return false;
-		if (Double.doubleToLongBits(totalTime) != Double.doubleToLongBits(other.totalTime))
 			return false;
 		if (type == null) {
 			if (other.type != null)

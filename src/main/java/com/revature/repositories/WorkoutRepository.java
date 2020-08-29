@@ -9,5 +9,5 @@ import com.revature.beans.Workout;
 
 @Repository
 public interface WorkoutRepository extends CrudRepository<Workout, Integer>{
-	List<Workout> findByIntensity(String intensity);
+	
 }

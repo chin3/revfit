@@ -20,6 +20,8 @@ public class WeightArchive {
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	private User user;
+	
+	@Column(columnDefinition = "NUMBER(10, 3)")
 	private double weight;
 	
 	@Column(name = "date_updated")
