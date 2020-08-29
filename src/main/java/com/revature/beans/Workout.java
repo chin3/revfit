@@ -1,10 +1,15 @@
 package com.revature.beans;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -14,14 +19,19 @@ public class Workout {
 	@GeneratedValue
 	@Column(name = "workout_id")
 	private int id;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	private User user;
-	
+
+	@ManyToMany(cascade = { CascadeType.ALL })
+	@JoinTable(name = "workout_exercise", joinColumns = { @JoinColumn(name = "workout_id") }, 
+	inverseJoinColumns = { @JoinColumn(name = "exercise_id") })
+	private List<Exercise> exercises;
+
 	private String intensity;
 	private String type;
-	
+
 	public Workout(int id, User user, String intensity, String type) {
 		super();
 		this.id = id;
@@ -29,14 +39,14 @@ public class Workout {
 		this.intensity = intensity;
 		this.type = type;
 	}
-	
+
 	public Workout(User user, String intensity, String type) {
 		super();
 		this.user = user;
 		this.intensity = intensity;
 		this.type = type;
 	}
-	
+
 	public Workout() {
 		super();
 	}
@@ -75,13 +85,15 @@ public class Workout {
 
 	@Override
 	public String toString() {
-		return "Workout [id=" + id + ", user=" + user + ", intensity=" + intensity + ", type=" + type + "]";
+		return "Workout [id=" + id + ", user=" + user + ", exercises=" + exercises + ", intensity=" + intensity
+				+ ", type=" + type + "]";
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((exercises == null) ? 0 : exercises.hashCode());
 		result = prime * result + id;
 		result = prime * result + ((intensity == null) ? 0 : intensity.hashCode());
 		result = prime * result + ((type == null) ? 0 : type.hashCode());
@@ -98,6 +110,11 @@ public class Workout {
 		if (getClass() != obj.getClass())
 			return false;
 		Workout other = (Workout) obj;
+		if (exercises == null) {
+			if (other.exercises != null)
+				return false;
+		} else if (!exercises.equals(other.exercises))
+			return false;
 		if (id != other.id)
 			return false;
 		if (intensity == null) {
@@ -117,8 +134,5 @@ public class Workout {
 			return false;
 		return true;
 	}
-	
-	
-	
-	
+
 }
