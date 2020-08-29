@@ -4,11 +4,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import javax.websocket.server.PathParam;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -30,7 +29,7 @@ public class WorkoutController {
 	}
 
 	@GetMapping(value = "/workout/{idOrIntensity}", produces = "application/json")
-	public List<Workout> getWorkout(@PathParam("idOrIntensity") String idOrIntensity, @RequestBody(required = false) User u) {
+	public List<Workout> getWorkout(@PathVariable("idOrIntensity") String idOrIntensity, @RequestBody(required = false) User u) {
 		if(u == null) {
 			try {
 				int id = Integer.parseInt(idOrIntensity);
@@ -52,13 +51,13 @@ public class WorkoutController {
 	
 
 	@PutMapping(value = "/workout/{id}", produces = "application/json")
-	public Workout updateWorkout(@PathParam("id") int id, @RequestBody Workout change) {
+	public Workout updateWorkout(@PathVariable("id") int id, @RequestBody Workout change) {
 		change.setId(id);
 		return ws.updateWorkout(change);
 	}
 
 	@DeleteMapping(value = "/workout/{id}")
-	public boolean deleteWorkout(@PathParam("id") int id) {
+	public boolean deleteWorkout(@PathVariable("id") int id) {
 		return ws.deleteWorkout(ws.getWorkout(id));
 	}
 	
