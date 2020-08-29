@@ -29,7 +29,7 @@ public class WorkoutController {
 	}
 
 	@GetMapping(value = "/workout/{idOrIntensity}", produces = "application/json")
-	public List<Workout> getWorkout(@PathVariable("idOrIntensity") String idOrIntensity, @RequestBody(required = false) User u) {
+	public List<Workout> getWorkout(@PathVariable(name = "idOrIntensity", required = false) String idOrIntensity, @RequestBody(required = false) User u) {
 		if(u == null) {
 			try {
 				int id = Integer.parseInt(idOrIntensity);
@@ -60,7 +60,5 @@ public class WorkoutController {
 	public boolean deleteWorkout(@PathVariable("id") int id) {
 		return ws.deleteWorkout(ws.getWorkout(id));
 	}
-	
-	
 	
 }
