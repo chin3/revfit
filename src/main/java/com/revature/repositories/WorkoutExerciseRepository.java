@@ -3,9 +3,9 @@ package com.revature.repositories;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.revature.beans.Workout;
+import com.revature.beans.WorkoutExercise;
 
 @Repository
-public interface WorkoutRepository extends CrudRepository<Workout, Integer>{
-	
+public interface WorkoutExerciseRepository extends CrudRepository<WorkoutExercise, Integer>{
+
 }
