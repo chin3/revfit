@@ -36,22 +36,29 @@ public class Workout {
 
 	private String intensity;
 	private String type;
+	private String name;
 
-	public Workout(int id, User user, String intensity, String type, List<Exercise> exercises) {
+	public Workout(int id, User user, String intensity, String type, String name, List<Exercise> exercises) {
 		super();
 		this.id = id;
 		this.user = user;
 		this.intensity = intensity;
 		this.type = type;
+		this.name = name;
 		this.exercises = exercises;
 	}
 
-	public Workout(User user, String intensity, String type, List<Exercise> exercises) {
+	public Workout(User user, String intensity, String type, String name, List<Exercise> exercises) {
 		super();
 		this.user = user;
 		this.intensity = intensity;
 		this.type = type;
+		this.name = name;
 		this.exercises = exercises;
+	}
+
+	public Workout() {
+		super();
 	}
 
 	public List<Exercise> getExercises() {
@@ -62,8 +69,12 @@ public class Workout {
 		this.exercises = exercises;
 	}
 
-	public Workout() {
-		super();
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public int getId() {
@@ -101,7 +112,7 @@ public class Workout {
 	@Override
 	public String toString() {
 		return "Workout [id=" + id + ", user=" + user + ", exercises=" + exercises + ", intensity=" + intensity
-				+ ", type=" + type + "]";
+				+ ", type=" + type + ", name=" + name + "]";
 	}
 
 	@Override
@@ -111,6 +122,7 @@ public class Workout {
 		result = prime * result + ((exercises == null) ? 0 : exercises.hashCode());
 		result = prime * result + id;
 		result = prime * result + ((intensity == null) ? 0 : intensity.hashCode());
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + ((type == null) ? 0 : type.hashCode());
 		result = prime * result + ((user == null) ? 0 : user.hashCode());
 		return result;
@@ -136,6 +148,11 @@ public class Workout {
 			if (other.intensity != null)
 				return false;
 		} else if (!intensity.equals(other.intensity))
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
 			return false;
 		if (type == null) {
 			if (other.type != null)
