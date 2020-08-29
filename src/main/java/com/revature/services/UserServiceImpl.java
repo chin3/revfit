@@ -32,6 +32,17 @@ public class UserServiceImpl implements UserService {
 	public List<User> getAllUsers() {
 		return (List<User>) er.findAll();
 	}
+	
+	@Override
+	public User login(String username, String password) {
+		User u = er.findByUsername(username);
+		if(u != null) {
+			if(u.getPassword().equals(password)) {
+				return u;
+			}
+		}
+		return null;
+	}
 
 	@Override
 	public User updateUser(User change) {

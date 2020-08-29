@@ -21,7 +21,7 @@ public class ExerciseController {
 	ExerciseService es;
 
 	@RequestMapping(value = "/exercise", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
-	public Exercise addExercise(Exercise e) {
+	public Exercise addExercise(@RequestBody Exercise e) {
 		return es.addExercise(e);
 	}
 
