@@ -26,13 +26,12 @@ public class ExerciseController {
 	}
 
 	@GetMapping(value = "/exercise/{id}", produces = "application/json")
-	public Exercise getExercise(@PathVariable("id") int id) {
-		return es.getExercise(id);
-	}
-
-	@GetMapping(value = "/exercise/{name}")
-	public Exercise findExercise(@PathVariable("name") String name) {
-		return es.findByName(name);
+	public Exercise getExercise(@PathVariable("id") String idOrName) {
+		try {
+			return es.getExercise(Integer.parseInt(idOrName));			
+		} catch(NumberFormatException e) {
+			return es.findByName(idOrName);
+		}
 	}
 
 	@GetMapping(value = "/exercise")
