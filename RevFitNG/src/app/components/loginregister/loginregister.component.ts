@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import {UserService} from '../../services/user.service';
 
 @Component({
   selector: 'app-loginregister',
@@ -8,7 +9,7 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 })
 export class LoginregisterComponent implements OnInit {
   closeResult: string;
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal, private userService: UserService) { }
   
   username: string;
   password: string;
@@ -33,6 +34,9 @@ export class LoginregisterComponent implements OnInit {
   login(){
     console.log(this.username);
     console.log(this.password);
+    this.userService.loginUser(this.username,this.password).subscribe((response)=>{console.log(response)},(response)=>{console.log("failed")},()=>{ console.log("finally")} )
+
+
   }
 
   ngOnInit(): void {

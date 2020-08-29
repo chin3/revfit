@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { LoginregisterComponent } from './components/loginregister/loginregister.component';
 import { WorkoutsComponent } from './components/workouts/workouts.component';
 import { HomeComponent } from './components/home/home.component';
+import { HomedashComponent } from './components/dashboardcomponents/homedash/homedash.component';
 
 
 
@@ -18,7 +19,8 @@ import { HomeComponent } from './components/home/home.component';
     AppComponent,
     LoginregisterComponent,
     WorkoutsComponent,
-    HomeComponent
+    HomeComponent,
+    HomedashComponent,
   ],
   imports: [
     ModalModule,

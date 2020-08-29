@@ -10,36 +10,49 @@
 			<div class="modal-body mx-3">
 				<div class="md-form mb-4">
 					<label for="orangeForm-name">Your username</label>
-					<input type="text" id="orangeForm-name" class="form-control" [formControl]="signupFormModalName">
+					<input type="text" id="orangeForm-name" class="form-control">
 				</div>
 				<div class="md-form mb-4">
 				  <label for="orangeForm-email">Your email</label>
-				  <input type="email" id="orangeForm-email" class="form-control" [formControl]="signupFormModalEmail">
+				  <input type="email" id="orangeForm-email" class="form-control">
 				  
 				</div>
 		
 				<div class="md-form mb-4">
 				  <label for="orangeForm-pass">Your password</label>
-				  <input type="password" id="orangeForm-pass" class="form-control" [formControl]="signupFormModalPassword">
+				  <input type="password" id="orangeForm-pass" class="form-control" >
 				  
 				</div>
 				<div class="md-form mb-4">
 					<label for="orangeForm-pass"> Re-type password</label>
-					<input type="password" id="orangeForm-pass" class="form-control" [formControl]="signupFormModalPassword">
+					<input type="password" id="orangeForm-pass" class="form-control">
 					
 				</div>
 
 				<div class="md-form mb-4">
-					<label for="orangeForm-height">Height</label>
-					<input type="password" id="orangeForm-pass" class="form-control" [formControl]="signupFormModalHeight">
+					<!--<label for="orangeForm-height">Height</label>
+					<input type="password" id="orangeForm-pass" class="form-control" > -->
+					<div class="row">
+						<div class="col">
+						  <div ngbDropdown class="d-inline-block">
+							<button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</button>
+							<div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+							  <button ngbDropdownItem>Action - 1</button>
+							  <button ngbDropdownItem>Another Action</button>
+							  <button ngbDropdownItem>Something else is here</button>
+							</div>
+						  </div>
+						</div>
+						</div>
 					
+
+
 				</div>
 				<div class="md-form mb-4">
 					<label for="orangeForm-weight">Weight</label>
-					<input type="password" id="orangeForm-pass" class="form-control" [formControl]="signupFormModalWeight">
+					<input type="password" id="orangeForm-pass" class="form-control">
 					
 				</div>  
-		
 			  </div>
 
 		</div>
