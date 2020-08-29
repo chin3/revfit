@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.beans.User;
@@ -30,6 +31,9 @@ public class WorkoutController {
 
 	@GetMapping(value = "/workout/{idOrIntensity}", produces = "application/json")
 	public List<Workout> getWorkout(@PathVariable(name = "idOrIntensity", required = false) String idOrIntensity, @RequestBody(required = false) User u) {
+		if(idOrIntensity == null) {
+			return null;
+		}
 		if(u == null) {
 			try {
 				int id = Integer.parseInt(idOrIntensity);
@@ -49,7 +53,6 @@ public class WorkoutController {
 		return ws.getAllWorkouts();
 	}
 	
-
 	@PutMapping(value = "/workout/{id}", produces = "application/json")
 	public Workout updateWorkout(@PathVariable("id") int id, @RequestBody Workout change) {
 		change.setId(id);

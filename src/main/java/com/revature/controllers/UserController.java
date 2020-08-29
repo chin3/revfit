@@ -6,15 +6,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.beans.User;
 import com.revature.services.UserService;
+import com.revature.util.UsernamePassword;
 
 @RestController
 public class UserController {
@@ -36,11 +37,10 @@ public class UserController {
 		return us.getUser(id);
 	}
 	
-	@GetMapping(value = "/user/search")
-	public User findUser(@RequestParam(required = false) String username) {
-		
-		if(username != null) {
-			return us.findByUsername(username);
+	@PostMapping(value = "/user/login", produces = "application/json", consumes = "application/json")
+	public User findUser(@RequestBody UsernamePassword up) {
+		if(up != null) {
+			return us.login(up.getUsername(), up.getPassword());
 		}
 		
 		return null;
