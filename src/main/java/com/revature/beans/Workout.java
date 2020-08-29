@@ -11,8 +11,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "workout")
 public class Workout {
 
 	@Id
@@ -25,26 +27,39 @@ public class Workout {
 	private User user;
 
 	@ManyToMany(cascade = { CascadeType.ALL })
-	@JoinTable(name = "workout_exercise", joinColumns = { @JoinColumn(name = "workout_id") }, 
-	inverseJoinColumns = { @JoinColumn(name = "exercise_id") })
+	@JoinTable(
+			name = "workout_exercise", 
+			joinColumns = { @JoinColumn(name = "workout_id") }, 
+			inverseJoinColumns = { @JoinColumn(name = "exercise_id") }
+	)
 	private List<Exercise> exercises;
 
 	private String intensity;
 	private String type;
 
-	public Workout(int id, User user, String intensity, String type) {
+	public Workout(int id, User user, String intensity, String type, List<Exercise> exercises) {
 		super();
 		this.id = id;
 		this.user = user;
 		this.intensity = intensity;
 		this.type = type;
+		this.exercises = exercises;
 	}
 
-	public Workout(User user, String intensity, String type) {
+	public Workout(User user, String intensity, String type, List<Exercise> exercises) {
 		super();
 		this.user = user;
 		this.intensity = intensity;
 		this.type = type;
+		this.exercises = exercises;
+	}
+
+	public List<Exercise> getExercises() {
+		return exercises;
+	}
+
+	public void setExercises(List<Exercise> exercises) {
+		this.exercises = exercises;
 	}
 
 	public Workout() {
