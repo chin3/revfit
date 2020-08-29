@@ -44,7 +44,14 @@ public class WorkoutServiceImpl implements WorkoutService{
 	
 	@Override
 	public List<Workout> getWorkoutsByIntensity(String intensity) {
-		return wr.findByIntensity(intensity);
+		List<Workout> workouts = (List<Workout>) wr.findAll();
+		List<Workout> works = new ArrayList<Workout>();
+		for(Workout w : workouts) {
+			if(w.getIntensity().equalsIgnoreCase(intensity)) {
+				works.add(w);
+			}
+		}
+		return works;
 	}
 
 	@Override

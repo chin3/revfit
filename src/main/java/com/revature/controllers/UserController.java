@@ -21,22 +21,22 @@ public class UserController {
 	@Autowired
 	UserService us;
 	
-	@RequestMapping(value = "/User", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
+	@RequestMapping(value = "/user", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
 	public User addUser(@RequestBody User u) {
 		return us.addUser(u);
 	}
 	
-	@GetMapping(value = "/User", produces = "application/json")
+	@GetMapping(value = "/user", produces = "application/json")
 	public List<User> allUser() {
 		return us.getAllUsers();
 	}
 	
-	@GetMapping(value = "User/{id}")
+	@GetMapping(value = "user/{id}")
 	public User getUser(@PathVariable("id") int id) {
 		return us.getUser(id);
 	}
 	
-	@GetMapping(value = "/User/search")
+	@GetMapping(value = "/user/search")
 	public User findUser(@RequestParam(required = false) String username) {
 		
 		if(username != null) {
@@ -46,13 +46,13 @@ public class UserController {
 		return null;
 	}
 	
-	@PutMapping(value = "/User/{id}", consumes = "application/json")
+	@PutMapping(value = "/user/{id}", consumes = "application/json")
 	public User updateUser(@PathVariable("id") int id, @RequestBody User change) {
 		change.setId(id);
 		return us.updateUser(change);
 	}
 	
-	@DeleteMapping(value = "/User/{id}")
+	@DeleteMapping(value = "/user/{id}")
 	public boolean deleteUser(@PathVariable("id") int id) {
 		return us.deleteUser(us.getUser(id));
 	}
