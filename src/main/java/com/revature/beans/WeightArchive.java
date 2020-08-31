@@ -114,7 +114,4 @@ public class WeightArchive {
 		return true;
 	}
 	
-	
-	
-	
 }
