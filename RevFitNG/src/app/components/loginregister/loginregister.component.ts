@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import {UserService} from '../../services/user.service';
 import { User } from 'src/app/model/user';
-
+const STORAGE_KEY = 'USER';
 @Component({
   selector: 'app-loginregister',
   templateUrl: './loginregister.component.html',
@@ -36,8 +36,17 @@ export class LoginregisterComponent implements OnInit {
   login(){
     console.log(this.username);
     console.log(this.password);
-    this.userService.loginUser(this.username,this.password).subscribe((response)=>{console.log(response)},(response)=>{console.log("failed")},()=>{ console.log("finally")} );
+    this.userService.loginUser(this.username,this.password).subscribe(
+      (response)=>{
+        var user = response;
+        sessionStorage.setItem(STORAGE_KEY,JSON.stringify(user));
+        window.location.href = '/home';
 
+      },
+      (response)=>{
+        console.log("failed")
+      },
+      ()=>{ console.log("finally")} )
 
   }
 
