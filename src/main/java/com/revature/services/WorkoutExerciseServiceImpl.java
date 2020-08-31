@@ -14,6 +14,7 @@ public class WorkoutExerciseServiceImpl implements WorkoutExerciseService {
 
 	@Autowired
 	WorkoutExerciseRepository wer;
+
 	
 	@Override
 	public WorkoutExercise addWorkoutExercise(WorkoutExercise e) {

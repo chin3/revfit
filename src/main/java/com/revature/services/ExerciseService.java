@@ -10,6 +10,7 @@ public interface ExerciseService {
 	public Exercise getExercise(int id);
 	public Exercise findByName(String name);
 	public List<Exercise> getAllExercises();
+	public List<Exercise> getExercisesByWorkout(int wid);
 	public Exercise updateExercise(Exercise change);
 	public boolean deleteExercise(Exercise e);
 }

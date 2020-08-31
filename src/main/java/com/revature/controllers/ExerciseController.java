@@ -33,10 +33,15 @@ public class ExerciseController {
 			return es.findByName(idOrName);
 		}
 	}
-
+	
 	@GetMapping(value = "/exercise")
 	public List<Exercise> getAllExercises() {
 		return es.getAllExercises();
+	}
+	
+	@GetMapping(value = "/exercise/search/{id}")
+	public List<Exercise> getExercisesByWorkout(@PathVariable("id") int wid) {
+		return es.getExercisesByWorkout(wid);
 	}
 
 	@PutMapping(value = "/exercise/{id}", consumes = "application/json", produces = "application/json")

@@ -31,29 +31,29 @@ public class WorkoutController {
 	}
 
 	@GetMapping(value = "/workout/{idOrIntensity}", produces = "application/json")
-	public List<Workout> getWorkout(@PathVariable(name = "idOrIntensity", required = false) String idOrIntensity, @RequestBody(required = false) User u) {
-		if(idOrIntensity == null) {
+	public List<Workout> getWorkout(@PathVariable(name = "idOrIntensity", required = false) String idOrIntensity) {
+		if (idOrIntensity == null) {
 			return null;
 		}
-		if(u == null) {
-			try {
-				int id = Integer.parseInt(idOrIntensity);
-				return new ArrayList<Workout>(Arrays.asList(ws.getWorkout(id)));
-			} catch(NumberFormatException e) {
-				return ws.getWorkoutsByIntensity(idOrIntensity);
-			}
+		try {
+			int id = Integer.parseInt(idOrIntensity);
+			return new ArrayList<Workout>(Arrays.asList(ws.getWorkout(id)));
+		} catch (NumberFormatException e) {
+			return ws.getWorkoutsByIntensity(idOrIntensity);
 		}
-		else {
-			return ws.getWorkoutsByUser(u.getId());
-		}
-		
+
+	}
+
+	@PostMapping(value = "/workout/search")
+	public List<Workout> getWorkoutsByUser(@RequestBody User u) {
+		return ws.getWorkoutsByUser(u.getId());
 	}
 
 	@GetMapping(value = "/workout", produces = "application/json")
 	public List<Workout> getAllWorkouts() {
 		return ws.getAllWorkouts();
 	}
-	
+
 	@PutMapping(value = "/workout/{id}", produces = "application/json")
 	public Workout updateWorkout(@PathVariable("id") int id, @RequestBody Workout change) {
 		change.setId(id);
@@ -64,5 +64,5 @@ public class WorkoutController {
 	public boolean deleteWorkout(@PathVariable("id") int id) {
 		return ws.deleteWorkout(ws.getWorkout(id));
 	}
-	
+
 }

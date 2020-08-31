@@ -21,6 +21,22 @@ public class WorkoutExerciseId implements Serializable{
 		this.exercise_id = exercise_id;
 	}
 
+	public int getWorkoutId() {
+		return workout_id;
+	}
+
+	public void setWorkoutId(int workout_id) {
+		this.workout_id = workout_id;
+	}
+
+	public int getExerciseId() {
+		return exercise_id;
+	}
+
+	public void setExerciseId(int exercise_id) {
+		this.exercise_id = exercise_id;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
