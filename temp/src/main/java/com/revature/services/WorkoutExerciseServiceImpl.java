@@ -9,6 +9,9 @@ import com.revature.beans.WorkoutExercise;
 import com.revature.repositories.WorkoutExerciseRepository;
 import com.revature.util.WorkoutExerciseId;
 
+import com.revature.beans.WorkoutExercise;
+import com.revature.repositories.WorkoutExerciseRepository;
+
 @Service
 public class WorkoutExerciseServiceImpl implements WorkoutExerciseService {
 
@@ -24,7 +27,7 @@ public class WorkoutExerciseServiceImpl implements WorkoutExerciseService {
 	public WorkoutExercise getWorkoutExercise(WorkoutExerciseId id) {
 		return wer.findById(id).get();
   }
-
+ 
 	@Override
 	public List<WorkoutExercise> getAllWorkoutExercises() {
 		return (List<WorkoutExercise>) wer.findAll();
