@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import {UserService} from '../../services/user.service';
+import { User } from 'src/app/model/user';
 
 @Component({
   selector: 'app-loginregister',
@@ -14,6 +15,7 @@ export class LoginregisterComponent implements OnInit {
   username: string;
   password: string;
 
+  new_user: User;
 
   open(content) {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
@@ -34,12 +36,17 @@ export class LoginregisterComponent implements OnInit {
   login(){
     console.log(this.username);
     console.log(this.password);
-    this.userService.loginUser(this.username,this.password).subscribe((response)=>{console.log(response)},(response)=>{console.log("failed")},()=>{ console.log("finally")} )
+    this.userService.loginUser(this.username,this.password).subscribe((response)=>{console.log(response)},(response)=>{console.log("failed")},()=>{ console.log("finally")} );
 
 
   }
 
+  register() {
+    console.log(this.new_user);
+    this.userService.registerUser(this.new_user).subscribe((response)=>{console.log(response)},(response)=>{console.log("failed")},()=>{ console.log("finally")} );
+  }
   ngOnInit(): void {
+    this.new_user = new User();
   }
 
 }
