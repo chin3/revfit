@@ -1,81 +1,68 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/model/user';
-const STORAGE_KEY =  "USER";
+const STORAGE_KEY = 'USER';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-  
   //User
-  u : User;
+  u: User;
   ngOnInit(): void {
     let user = sessionStorage.getItem(STORAGE_KEY);
-    if(user == null) {
+    if (user == null) {
       window.location.href = '/loginregister';
     }
-
   }
-  
+
   //Main Dash
   ishomedash: boolean = true;
   isworkoutgendash: boolean = false;
   isworkouts: boolean = false;
 
-
   //Left Card
   islefthomedash: boolean = true;
   isleftgendash: boolean = false;
   isleftworkouts: boolean = false;
-  
+
   //Right Card
   isaccountinfo: boolean = true;
-  
 
-
-
- 
-  toHome(){
-    this.ishomedash=true;
+  toHome() {
+    this.ishomedash = true;
     this.islefthomedash = true;
-    
-    if(this.ishomedash){
-      this.isworkoutgendash=false;
+
+    if (this.ishomedash) {
+      this.isworkoutgendash = false;
       this.isleftgendash = false;
       this.isworkouts = false;
       this.isleftworkouts = false;
     }
-
-    
-
   }
-  
-  toWorkoutGenerator(){
-   
+
+  toWorkoutGenerator() {
     this.isleftgendash = true;
-    this.isworkoutgendash=true;
-    if(this.isworkoutgendash){
-      this.ishomedash=false;
+    this.isworkoutgendash = true;
+    if (this.isworkoutgendash) {
+      this.ishomedash = false;
       this.islefthomedash = false;
       this.isworkouts = false;
       this.isleftworkouts = false;
     }
   }
 
-  toWorkouts(){
+  toWorkouts() {
     this.isworkouts = true;
     this.isleftworkouts = true;
-    
-    if(this.isworkouts){
-      this.ishomedash=false;
+
+    if (this.isworkouts) {
+      this.ishomedash = false;
       this.islefthomedash = false;
       this.isleftgendash = false;
-      this.isworkoutgendash=false;
+      this.isworkoutgendash = false;
     }
   }
-
-
 }

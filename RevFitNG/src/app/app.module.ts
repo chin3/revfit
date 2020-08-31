@@ -2,9 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { AppRoutingModule } from './app-routing.module';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import {FormsModule} from '@angular/forms'
-import {HttpClientModule} from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { LoginregisterComponent } from './components/loginregister/loginregister.component';
@@ -18,16 +18,14 @@ import { LeftgendashComponent } from './components/workoutgencomponents/leftgend
 import { WorkoutdashComponent } from './components/workoutcomponents/workoutdash/workoutdash.component';
 import { WorkoutleftComponent } from './components/workoutcomponents/workoutleft/workoutleft.component';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
     LoginregisterComponent,
     WorkoutsComponent,
     HomeComponent,
-    HomedashComponent,  
-      LeftcardComponent,
+    HomedashComponent,
+    LeftcardComponent,
     RightcardComponent,
     WorkoutgendashComponent,
     LeftgendashComponent,
@@ -40,9 +38,9 @@ import { WorkoutleftComponent } from './components/workoutcomponents/workoutleft
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
