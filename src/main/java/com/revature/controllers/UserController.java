@@ -3,6 +3,7 @@ package com.revature.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +18,7 @@ import com.revature.beans.User;
 import com.revature.services.UserService;
 import com.revature.util.UsernamePassword;
 
+@CrossOrigin(maxAge = 3600, origins = "http://localhost:4200")
 @RestController
 public class UserController {
 	@Autowired
@@ -56,4 +58,5 @@ public class UserController {
 	public boolean deleteUser(@PathVariable("id") int id) {
 		return us.deleteUser(us.getUser(id));
 	}
+	
 }

@@ -50,6 +50,14 @@ public class WeightArchive {
 		return user;
 	}
 
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public void setUser(User user) {
 		this.user = user;
 	}
