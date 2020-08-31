@@ -63,6 +63,4 @@ public class WorkoutController {
 		return ws.deleteWorkout(ws.getWorkout(id));
 	}
 	
-	
-	
 }

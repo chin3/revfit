@@ -23,14 +23,6 @@ public class WorkoutExercise {
 	
 	@ManyToOne
 	@JoinColumn(name = "exercise_id", insertable = false, updatable = false)
-
-	@ManyToOne
-	@JoinColumn(name = "workout_id")
-	private Workout workout;
-	
-	@ManyToOne
-	@JoinColumn(name = "exercise_id")
-
 	private Exercise exercise;
 	
 	@Column(columnDefinition = "NUMBER(10, 3)")
@@ -147,9 +139,6 @@ public class WorkoutExercise {
 	public String toString() {
 		return "WorkoutExercise [id=" + id + ", workout=" + workout + ", exercise=" + exercise + ", time=" + time
 				+ ", sets=" + sets + "]";
-
-		return "WorkoutExercise [workout=" + workout + ", exercise=" + exercise + ", time=" + time + ", sets=" + sets
-				+ "]";
 	}
 	
 }

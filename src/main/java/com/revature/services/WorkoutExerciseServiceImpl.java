@@ -27,11 +27,7 @@ public class WorkoutExerciseServiceImpl implements WorkoutExerciseService {
 	public WorkoutExercise getWorkoutExercise(WorkoutExerciseId id) {
 		return wer.findById(id).get();
   }
-  
-	public WorkoutExercise getWorkoutExercise(int workout_id, int exercise_id) {
-		return null;
-	}
-
+ 
 	@Override
 	public List<WorkoutExercise> getAllWorkoutExercises() {
 		return (List<WorkoutExercise>) wer.findAll();

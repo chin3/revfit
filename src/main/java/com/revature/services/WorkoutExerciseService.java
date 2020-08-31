@@ -8,11 +8,6 @@ import com.revature.util.WorkoutExerciseId;
 public interface WorkoutExerciseService {
 	public WorkoutExercise addWorkoutExercise(WorkoutExercise e);
 	public WorkoutExercise getWorkoutExercise(WorkoutExerciseId id);
-
-
-public interface WorkoutExerciseService {
-	public WorkoutExercise addWorkoutExercise(WorkoutExercise e);
-	public WorkoutExercise getWorkoutExercise(int workout_id, int exercise_id);
 	public List<WorkoutExercise> getAllWorkoutExercises();
 	public WorkoutExercise updateWorkoutExercise(WorkoutExercise change);
 	public boolean deleteWorkoutExercise(WorkoutExercise e);
