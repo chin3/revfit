@@ -3,6 +3,7 @@ package com.revature.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,6 +16,7 @@ import com.revature.beans.WorkoutExercise;
 import com.revature.services.WorkoutExerciseService;
 import com.revature.util.WorkoutExerciseId;
 
+@CrossOrigin(maxAge = 3600, origins = "http://localhost:4200")
 @RestController
 public class WorkoutExerciseController {
 	@Autowired
