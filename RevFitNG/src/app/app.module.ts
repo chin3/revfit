@@ -17,6 +17,7 @@ import { WorkoutgendashComponent } from './components/workoutgencomponents/worko
 import { LeftgendashComponent } from './components/workoutgencomponents/leftgendash/leftgendash.component';
 import { WorkoutdashComponent } from './components/workoutcomponents/workoutdash/workoutdash.component';
 import { WorkoutleftComponent } from './components/workoutcomponents/workoutleft/workoutleft.component';
+import {WorkouttimerComponent} from './components/workoutcomponents/workouttimer/workouttimer.component';
 
 
 
@@ -33,6 +34,7 @@ import { WorkoutleftComponent } from './components/workoutcomponents/workoutleft
     LeftgendashComponent,
     WorkoutdashComponent,
     WorkoutleftComponent,
+    WorkouttimerComponent
   ],
   imports: [
     ModalModule,
