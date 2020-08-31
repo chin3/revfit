@@ -10,17 +10,17 @@
 			<div class="modal-body mx-3">
 				<div class="md-form mb-4">
 					<label for="orangeForm-name">Your username</label>
-					<input type="text" id="orangeForm-name" class="form-control">
+					<input type="text" id="orangeForm-name" class="form-control" [(ngModel)] = "new_user.username">
 				</div>
 				<div class="md-form mb-4">
 				  <label for="orangeForm-email">Your email</label>
-				  <input type="email" id="orangeForm-email" class="form-control">
+				  <input type="email" id="orangeForm-email" class="form-control" [(ngModel)] = "new_user.email">
 				  
 				</div>
 		
 				<div class="md-form mb-4">
 				  <label for="orangeForm-pass">Your password</label>
-				  <input type="password" id="orangeForm-pass" class="form-control" >
+				  <input type="password" id="orangeForm-pass" class="form-control" [(ngModel)] = "new_user.password">
 				  
 				</div>
 				<div class="md-form mb-4">
@@ -28,10 +28,21 @@
 					<input type="password" id="orangeForm-pass" class="form-control">
 					
 				</div>
-
 				<div class="md-form mb-4">
-					<!--<label for="orangeForm-height">Height</label>
-					<input type="password" id="orangeForm-pass" class="form-control" > -->
+					<label for="orangeForm-first">First Name</label>
+					<input type="text" id="orangeForm-first" class="form-control" [(ngModel)] = "new_user.firstName">
+					
+				  </div>
+				  <div class="md-form mb-4">
+					<label for="orangeForm-last">Last Name</label>
+					<input type="text" id="orangeForm-last" class="form-control" [(ngModel)] = "new_user.lastName">
+					
+				  </div>
+				
+				<!--
+				<div class="md-form mb-4">
+					<label for="orangeForm-height">Height</label>
+					<input type="password" id="orangeForm-pass" class="form-control" > 
 					<div class="row">
 						<div class="col">
 						  <div ngbDropdown class="d-inline-block">
@@ -47,17 +58,23 @@
 					
 
 
-				</div>
+				</div> -->
 				<div class="md-form mb-4">
 					<label for="orangeForm-weight">Weight</label>
-					<input type="password" id="orangeForm-pass" class="form-control">
+					<input type="number" id="orangeForm-weight" class="form-control" [(ngModel)] = "new_user.weight">
 					
-				</div>  
+				</div>
+
+				<div class="md-form mb-4">
+					<label for="orangeForm-height">Height</label>
+					<input type="number" id="orangeForm-height" class="form-control" [(ngModel)] = "new_user.height">
+				</div>
+
 			  </div>
 
 		</div>
 		<div class="modal-footer">
-		  <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Submit</button>
+		  <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click'); register()">Submit</button>
 		</div>
 	  </ng-template>
 	
