@@ -16,9 +16,8 @@ export class HomeComponent implements OnInit {
     let user = sessionStorage.getItem(STORAGE_KEY);
     if(user == null) {
       window.location.href = '/loginregister';
-      return;
     }
-    console.log(user);
+
   }
   
   //Main Dash

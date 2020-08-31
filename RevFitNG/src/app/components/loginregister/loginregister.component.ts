@@ -54,7 +54,6 @@ export class LoginregisterComponent implements OnInit {
         console.log("failed")
       },
       ()=>{ console.log("finally")} )
-
   }
 
   register() {
