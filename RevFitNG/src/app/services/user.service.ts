@@ -6,10 +6,7 @@ import {User} from '../model/user';
   providedIn: 'root'
 })
 export class UserService {
-  private headers = new HttpHeaders({'Content-Type':'application/json', 
-                                      'Access-Control-Allow-Origin': 'http://localhost:4200',
-                                      'Access-Control-Allow-Methods': 'GET, POST, OPTIONS, PUT, PATCH, DELETE',
-                                      'Access-Control-Allow-Credentials': 'true'});
+  private headers = new HttpHeaders({'Content-Type':'application/json'});
 
   constructor(private http: HttpClient) { }
 
@@ -17,7 +14,4 @@ export class UserService {
     return this.http.post<User>('http://localhost:8080/user/login',{"username": username , "password":password},{headers: this.headers});
   }
 
-  registerUser(new_user) {
-    return this.http.post<User>('http://localhost:8080/user', JSON.stringify(new_user), {headers: this.headers});
-  }
 }
