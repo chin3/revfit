@@ -26,6 +26,7 @@ export class LoginregisterComponent implements OnInit {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
   }
+
   private getDismissReason(reason: any): string {
     if (reason === ModalDismissReasons.ESC) {
       return 'by pressing ESC';
@@ -35,12 +36,16 @@ export class LoginregisterComponent implements OnInit {
       return  `with: ${reason}`;
     }
   }
+
   login(){
-    console.log(this.username);
-    console.log(this.password);
     this.userService.loginUser(this.username,this.password).subscribe(
       (response)=>{
         var user = response;
+        if(user == null) {
+          alert("Invalid credentials, please try again");
+          sessionStorage.clear();
+          return;
+        }
         sessionStorage.setItem(STORAGE_KEY,JSON.stringify(user));
         window.location.href = '/home';
 
@@ -49,7 +54,6 @@ export class LoginregisterComponent implements OnInit {
         console.log("failed")
       },
       ()=>{ console.log("finally")} )
-
   }
 
   register() {

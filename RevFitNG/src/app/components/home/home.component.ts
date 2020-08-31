@@ -14,7 +14,10 @@ export class HomeComponent implements OnInit {
   u : User;
   ngOnInit(): void {
     let user = sessionStorage.getItem(STORAGE_KEY);
-    console.log(user);
+    if(user == null) {
+      window.location.href = '/loginregister';
+    }
+
   }
   
   //Main Dash
