@@ -11,6 +11,12 @@ import { LoginregisterComponent } from './components/loginregister/loginregister
 import { WorkoutsComponent } from './components/workouts/workouts.component';
 import { HomeComponent } from './components/home/home.component';
 import { HomedashComponent } from './components/dashboardcomponents/homedash/homedash.component';
+import { LeftcardComponent } from './components/dashboardcomponents/leftcard/leftcard.component';
+import { RightcardComponent } from './components/dashboardcomponents/rightcard/rightcard.component';
+import { WorkoutgendashComponent } from './components/workoutgencomponents/workoutgendash/workoutgendash.component';
+import { LeftgendashComponent } from './components/workoutgencomponents/leftgendash/leftgendash.component';
+import { WorkoutdashComponent } from './components/workoutcomponents/workoutdash/workoutdash.component';
+import { WorkoutleftComponent } from './components/workoutcomponents/workoutleft/workoutleft.component';
 
 
 
@@ -20,7 +26,13 @@ import { HomedashComponent } from './components/dashboardcomponents/homedash/hom
     LoginregisterComponent,
     WorkoutsComponent,
     HomeComponent,
-    HomedashComponent,
+    HomedashComponent,  
+      LeftcardComponent,
+    RightcardComponent,
+    WorkoutgendashComponent,
+    LeftgendashComponent,
+    WorkoutdashComponent,
+    WorkoutleftComponent,
   ],
   imports: [
     ModalModule,
