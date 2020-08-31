@@ -5,12 +5,19 @@ import { AppRoutingModule } from './app-routing.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule} from '@angular/forms'
 import {HttpClientModule} from '@angular/common/http';
+//import {StorageServiceModule} from 'angular-webstorage-service'
 
 import { AppComponent } from './app.component';
 import { LoginregisterComponent } from './components/loginregister/loginregister.component';
 import { WorkoutsComponent } from './components/workouts/workouts.component';
 import { HomeComponent } from './components/home/home.component';
 import { HomedashComponent } from './components/dashboardcomponents/homedash/homedash.component';
+import { LeftcardComponent } from './components/dashboardcomponents/leftcard/leftcard.component';
+import { RightcardComponent } from './components/dashboardcomponents/rightcard/rightcard.component';
+import { WorkoutgendashComponent } from './components/workoutgencomponents/workoutgendash/workoutgendash.component';
+import { LeftgendashComponent } from './components/workoutgencomponents/leftgendash/leftgendash.component';
+import { WorkoutdashComponent } from './components/workoutcomponents/workoutdash/workoutdash.component';
+import { WorkoutleftComponent } from './components/workoutcomponents/workoutleft/workoutleft.component';
 
 
 
@@ -21,6 +28,12 @@ import { HomedashComponent } from './components/dashboardcomponents/homedash/hom
     WorkoutsComponent,
     HomeComponent,
     HomedashComponent,
+    LeftcardComponent,
+    RightcardComponent,
+    WorkoutgendashComponent,
+    LeftgendashComponent,
+    WorkoutdashComponent,
+    WorkoutleftComponent,
   ],
   imports: [
     ModalModule,
@@ -28,7 +41,8 @@ import { HomedashComponent } from './components/dashboardcomponents/homedash/hom
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    //StorageServiceModule
   ],
   providers: [],
   bootstrap: [AppComponent]
