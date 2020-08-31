@@ -10,7 +10,6 @@ export class User{
     email: string;
     weight: number;
     height: number;
-    
     constructor(){};
 
 
