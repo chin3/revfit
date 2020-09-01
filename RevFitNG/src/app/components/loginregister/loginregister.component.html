@@ -1,7 +1,7 @@
 <body style="background-color:#575a66">
 	<ng-template #mymodal let-modal>
 		<div class="modal-header">
-		  <h4 class="modal-title" id="modal-basic-title">Thanks for joining us!</h4>
+		  <h4 class="modal-title" id="modal-basic-title">Register a new RevFit User</h4>
 		  <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
 			<span aria-hidden="true">×</span>
 		  </button>
@@ -24,7 +24,7 @@
 				  
 				</div>
 				<div class="md-form mb-4">
-					<label for="orangeForm-pass"> Re-type password</label>
+					<label for="orangeForm-pass">Re-type password</label>
 					<input type="password" id="orangeForm-pass" class="form-control">
 					
 				</div>
@@ -79,13 +79,13 @@
 	  </ng-template>
 	
 	
-	<div id = "background">
+	<div id = "background" style="height: 2400px">
 	<div class="page-header">
 		<div class="container">
 			<div class="row">
 				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 					<div class="page-caption">
-						<h1 class="page-title" style="color:white; text-align:center; font-size:52px; font-family: 'Open Sans', sans-serif;">Welcome to RevFit</h1>
+						<h1 class="page-title" style="color:white; text-align:center; font-size:120px;">RevFit -  Home Fitness Revolution</h1>
 					</div>
 				</div>
 			</div>
@@ -96,12 +96,11 @@
     <br/>
     <br/>
 
-<div class="card" style="align-items: center; background-color: #808391; ">
-	<article class="login" style="background-color: #808391;">
-		<p class="text-center" id="authtext" style="font-size: 1.8em; color: white; font-family: 'Open Sans', sans-serif; opacity: 1.0;">Please Log In</p>
-		<!--<form action="Login" method="POST">-->
+<div class="card" style="align-items: center; background-color: rgba(121, 115, 115, .10); opacity: 95%; margin-left: 600px; margin-right: 600px;">
+	<article class="login" style="background-color: #808391; opacity: 1;">
+		<p class="text-center" id="authtext" style="font-size: 1.8em; color: white; opacity: 1;">Please Log In Or Register</p>
 		<form>
-		<div class="form-group" style="background-color: #808391">
+		<div class="form-group" style="background-color: #808391; opacity: 1">
 		<div class="input-group">
 			<div class="input-group-prepend">
 				<span class="input-group-text"> <i class="fa fa-user"></i> </span>
@@ -118,11 +117,10 @@
 		</div> 
 		</div> 
 		<div class="form-group">
-	<!--	<button type="Submit" value="Log In" id="submitid" class="btn btn-primary btn-block" >Login</button> -->
 		</div> 
 		</form>
 		<button class="btn btn-primary btn-block" (click) = "login()">Login</button>
-		<button  class="btn btn-secondary btn-block" (click)="open(mymodal)">Register</button>
+		<button  class="btn btn-secondary btn-block" (click)="open(mymodal)">Register New User</button>
 	</article>
     </div> 
 </div>
