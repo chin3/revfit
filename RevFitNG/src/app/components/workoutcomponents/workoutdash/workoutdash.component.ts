@@ -12,6 +12,7 @@ const STORAGE_KEY = 'USER';
 export class WorkoutdashComponent implements OnInit {
   ngOnInit(): void {
     this.user= JSON.parse(sessionStorage.getItem(STORAGE_KEY));
+    console.log(this.user);
     this.getUserWorkouts(this.user);
   }
 
