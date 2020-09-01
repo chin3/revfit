@@ -32,9 +32,9 @@ public class WorkoutExerciseController {
 		return ws.getAllWorkoutExercises();
 	}
 	
-	@PostMapping(value = "/workoutExercise/search", produces = "application/json")
-	public WorkoutExercise getWorkoutExercise(@RequestBody WorkoutExerciseId id) {
-		return ws.getWorkoutExercise(id);
+	@GetMapping(value = "/workoutExercise/search", produces = "application/json")
+	public WorkoutExercise getWorkoutExercise(@RequestParam(name = "workout_id") int workout_id, @RequestParam(name = "exercise_id") int exercise_id) {
+		return ws.getWorkoutExercise(new WorkoutExerciseId(workout_id, exercise_id));
 	}
 	
 	@PutMapping(value = "/workoutExercise/search", produces = "application/json")
