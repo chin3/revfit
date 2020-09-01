@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Workout} from 'src/app/model/Workout';
-import { User } from 'src/app/model/user';
+import { User } from 'src/app/model/User';
 import {WorkoutService} from 'src/app/services/workout.service';
 import { setClassMetadata } from '@angular/core/src/r3_symbols';
 

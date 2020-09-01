@@ -34,7 +34,7 @@
 
 
 #background {
-    background: url('../../resources/images/workoutsplash.jpeg') no-repeat;
+    background: url('../../resources/images/workoutsplash.jpeg') no-repeat center;
     background-size: cover;
     position: center;
     

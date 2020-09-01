@@ -11,6 +11,7 @@ public interface WorkoutService {
 	public List<Workout> getAllWorkouts();
 	public List<Workout> getWorkoutsByUser(int id);
 	public List<Workout> getWorkoutsByIntensity(String intensity);
+	public double getWorkoutTime(int id);
 	public Workout updateWorkout(Workout change);
 	public boolean deleteWorkout(Workout w);
 }
