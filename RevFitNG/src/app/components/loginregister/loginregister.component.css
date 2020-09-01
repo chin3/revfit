@@ -2,14 +2,6 @@
     position: center;
   }
 
-  .page-title {
-    font-size: 62px;
-    line-height: 1;
-    color: #fff;
-    font-weight: 600;
-    text-align: center;
-  }
-
 .page-caption {
   padding-top: 150px;
   padding-bottom: 150px;
@@ -26,17 +18,13 @@
 }
 
 .card-body {
-  width: 100%;
+  width: 30%;
 }
 
 .login {
   width: 20%;
 }
 
-.ReimbForm {
-  width: 100%;
-  font-weight: 200;
-}
 
 .formBody {
 	text-align:center;
@@ -44,12 +32,9 @@
 	font-weight: 200;
 }
 
-.iframe {
-	zoom: 1;
-}
 
 #background {
-    background: url('../../resources/images/workoutsplash.jpeg') no-repeat;
+    background: url('../../resources/images/workoutsplash.jpeg') no-repeat center;
     background-size: cover;
     position: center;
 }
