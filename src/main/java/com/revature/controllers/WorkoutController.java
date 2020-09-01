@@ -53,7 +53,7 @@ public class WorkoutController {
 	public List<Workout> getAllWorkouts() {
 		return ws.getAllWorkouts();
 	}
-	
+
 	@GetMapping(value = "/workout/{id}/time")
 	public double getWorkoutTime(@PathVariable("id") int id) {
 		return ws.getWorkoutTime(id);
