@@ -53,7 +53,12 @@ public class WorkoutController {
 	public List<Workout> getAllWorkouts() {
 		return ws.getAllWorkouts();
 	}
-
+	
+	@GetMapping(value = "/workout/{id}/time")
+	public double getWorkoutTime(@PathVariable("id") int id) {
+		return ws.getWorkoutTime(id);
+	}
+	
 	@PutMapping(value = "/workout/{id}", produces = "application/json")
 	public Workout updateWorkout(@PathVariable("id") int id, @RequestBody Workout change) {
 		change.setId(id);
