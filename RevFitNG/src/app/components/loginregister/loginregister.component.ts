@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import {UserService} from '../../services/user.service';
-import { User } from 'src/app/model/user';
-import { Role } from 'src/app/model/role';
+import { User } from 'src/app/model/User';
+import { Role } from 'src/app/model/Role';
 const STORAGE_KEY = 'USER';
 @Component({
   selector: 'app-loginregister',

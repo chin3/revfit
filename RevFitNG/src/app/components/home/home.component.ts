@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/model/user';
+import { User } from 'src/app/model/User';
 const STORAGE_KEY =  "USER";
 @Component({
   selector: 'app-home',
