@@ -15,7 +15,7 @@ export class WorkoutService {
 constructor(private http: HttpClient) { }
 
 getUserWorkouts(user:User){
-  return this.http.post<Workout[]>('http://localhost:8080/workout', JSON.stringify(user));
+  return this.http.post<Workout[]>('http://localhost:8080/workout/search', JSON.stringify(user),{headers: this.headers});
 }
 
 }
